@@ -3,8 +3,6 @@ package genericlibrary;
 import java.lang.reflect.Method;
 import java.time.Duration;
 
-import javax.security.auth.login.LoginContext;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -15,13 +13,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
-import objectRepository.LoginPage;
-import objectRepository.WelcomePage;
+import ObjectReporsitory.LoginPage;
+import ObjectReporsitory.WelcomePage;
 
 public class BaseClass extends UtilityMethods {
 
@@ -54,7 +50,7 @@ public class BaseClass extends UtilityMethods {
 		WelcomePage welcome=new WelcomePage(driver);
 		
 		LoginPage login=new LoginPage(driver);
-		welcome.getLoginLink().click();
+		welcome.getLoginlink().click();
 		
 		login.getEmailTF().sendKeys("nandanms@gmail.com");
 		login.getPasswordTF().sendKeys("nandan@1234");
@@ -89,7 +85,7 @@ public class BaseClass extends UtilityMethods {
 		report.endTest(test);
 		WelcomePage welcoome=new WelcomePage(driver);
 		
-		welcoome.getLogoutLink().click();
+		welcoome.getLoginlink().click();
 		System.out.println("After method");
 	}
 	

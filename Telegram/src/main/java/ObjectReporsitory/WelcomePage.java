@@ -12,6 +12,12 @@ public class WelcomePage {
 	@FindBy(partialLinkText ="BOOKS")
 	private WebElement booksLink;
 	
+	@FindBy(linkText = "Log in")
+	private WebElement loginlink;
+	
+	public WebElement getLoginlink() {
+		return loginlink;
+	}
 	@FindBy(linkText = "Apparel & Shoes")
 	private WebElement apparelspage;
 	
